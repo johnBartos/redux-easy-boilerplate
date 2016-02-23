@@ -15,6 +15,7 @@ export default class QuoteTableBody extends Component {
     const body = this.props.body;
 
     const rows = body.map((e, i) => {
+      //just map each property to a div, but it's a better idea to filter the object properties into other components
       const cols = Object.keys(e).map((key, j) => {
         return (<QuoteDataColumn key={j}><div>{e[key].value}</div></QuoteDataColumn>);
       });

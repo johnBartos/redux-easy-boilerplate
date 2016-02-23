@@ -12,8 +12,10 @@ class Home extends Component {
     return (
       <section>
         <QuoteTable
-          quotes={this.props.quoteReducer}
+          headers={this.props.quoteReducer.quoteTitles}
+          body={this.props.quoteReducer.quoteValues}
           quoteClick={this.props.applyToQuote}
+          rowClick={this.props.exploreQuote}
         />
       </section>
     );

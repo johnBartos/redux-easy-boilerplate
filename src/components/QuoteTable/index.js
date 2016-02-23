@@ -4,19 +4,22 @@ import QuoteTableBody from './QuoteTableBody/';
 
 export class QuoteTable extends Component {
   static propTypes = {
-    quotes: PropTypes.array.isRequired,
-    quoteClick: PropTypes.func.isRequired
+    headers: PropTypes.array.isRequired,
+    body: PropTypes.array.isRequired,
+    quoteClick: PropTypes.func.isRequired,
+    rowClick: PropTypes.func.isRequired
   };
 
   render() {
     return (
       <table className="table table-striped">
         <QuoteTableHeader
-          quotes={this.props.quotes}
+          headers={this.props.headers}
         />
         <QuoteTableBody
-          quotes={this.props.quotes}
+          body={this.props.body}
           onApply={this.props.quoteClick}
+          rowClick={this.props.rowClick}
         />
       </table>
     );

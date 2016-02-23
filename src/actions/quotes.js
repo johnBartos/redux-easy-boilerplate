@@ -3,7 +3,6 @@ export function getQuotes() {
   fetch('/quotes')
     .then(response => {
       response.json().then(data => {
-        console.log(data);
         dispatch({
           type: 'GET_QUOTES_SUCCESS',
           quotes: data
@@ -19,10 +18,17 @@ export function getQuotes() {
   };
 }
 
-export function applyToQuote(carrier) {
+export function applyToQuote(carrier, se, button, event) {
   alert('Applying to ' + carrier);
   return {
     type: 'APPLY_TO_QUOTE',
     carrier
+  };
+}
+
+export function exploreQuote(index) {
+  return {
+    type: 'EXPLORE_QUOTE',
+    index
   };
 }

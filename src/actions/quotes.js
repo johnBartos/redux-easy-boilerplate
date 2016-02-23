@@ -1,5 +1,4 @@
 export function getQuotes() {
-  console.log('works');
   return (dispatch, getState) => {
   fetch('/quotes')
     .then(response => {
@@ -21,7 +20,7 @@ export function getQuotes() {
 }
 
 export function applyToQuote(carrier) {
-  alert(carrier);
+  alert('Applying to ' + carrier);
   return {
     type: 'APPLY_TO_QUOTE',
     carrier

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import ApplyButton from '../Apply/';
+import QuoteTableHeader from './QuoteTableHeader/';
+import QuoteTableBody from './QuoteTableBody/';
 
 export class QuoteTable extends Component {
   static propTypes = {
@@ -8,14 +9,16 @@ export class QuoteTable extends Component {
   };
 
   render() {
-    console.log(this.props)
-    const quotes = this.props.quotes.map(e => {
-      return <li key={e.carrier}><ApplyButton text={e.carrier} click={this.props.quoteClick}/></li>;
-    });
     return (
-      <ul>
-        {quotes}
-      </ul>
+      <table className="table table-striped">
+        <QuoteTableHeader
+          quotes={this.props.quotes}
+        />
+        <QuoteTableBody
+          quotes={this.props.quotes}
+          onApply={this.props.quoteClick}
+        />
+      </table>
     );
   }
 }
